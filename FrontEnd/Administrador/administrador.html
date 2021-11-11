@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title> Administración</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="../Administrador/partesVer/css/all.min.css" />
+    <link rel="stylesheet" href="../Administrador/partesVer/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Administrador/partesVer/slick/slick.css"/>    
+    <link rel="stylesheet" type="text/css" href="../Administrador/partesVer/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="../Administrador/partesVer/css/templatemo-style.css" />
+    <link rel="stylesheet" href="../Administrador/partesVer/style.css">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"></script>
+   
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="../Administrador/partesVer/assets/css/bootstrap.min.css">  
+   
+    
+    <!--====== Style CSS ======-->
+   <link rel="stylesheet" href="../Administrador/partesVer/assets/css/style.css"> 
+
+  </head>
+  <body id="servicesPage">
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img\backgroud.jpg">
+      <div class="container-fluid">
+        <div class="row tm-brand-row">
+        <div class="col-lg-4 col-11">
+            <div class="tm-brand-container tm-bg-white-transparent">
+    <!--Logo-->
+              <img class="dib0" src="img\8.png" WIDTH=185 HEIGHT=200>
+             </i>
+                <div class="tm-brand-texts">
+                     <h1 class="text-uppercase tm-brand-name">SaúlGallery</h1>
+                </div>
+            </div>
+        </div>
+
+          <div class="col-lg-8 col-1">
+            <div class="tm-nav">
+              <nav class="navbar navbar-expand-lg navbar-light tm-bg-white-transparent tm-navbar">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+        <!--Home-->              
+                     <li class="nav-item active">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="../Index/index.html">Home</a>
+                      </li>
+        
+        <!--Ver Productos-->              
+                      <li class="nav-item active">
+                        <div class="tm-nav-link-highlight"></div>
+                        <a class="nav-link" href="../Administrador/verProductos.html">Arte</a>
+                        </li>
+                      <!--Login-->              
+                    <li class="nav-item">
+                      <div class="tm-nav-link-highlight"></div>
+                     <a class="nav-link" href="../Login/login.html">Login</a>
+                   </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        <!-- Prevencion -->
+        <section class="row" id="tmServices">
+          <div class="col-12">
+            <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header"
+                 data-parallax="scroll"
+                 data-z-index="101"
+                 data-image-src="img\banner.jpg">
+
+                 <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
+                    <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Usuarios</h2>
+                </div>
+            </div>
+          </div>   
+        </section>
+<!--Inicio modulo tab-->
+        <section class="row tm-testimonials-section">
+
+            <div class="wrap">
+               
+                <ul class="tabs">
+                    <li><a href="#tab1"><span class="fas fa-2x fas fa-user-tie"></span><span class="tab-text">Carga Usuarios</span></a></li>
+                   <li><a href="#tab2"><span class="fas fa-2x fas fa-user-tie"></span><span class="tab-text">Ver Usuarios</span></a></li>
+                   <li><a href="#tab3"><span class="fas fa-2x fas fa-user-tie"></span><span class="tab-text">Tabla Usuarios</span></a></li>
+                    
+                  </ul>
+
+                <div class="col-12 tm-carousel">   
+                    <div class="secciones">
+
+                    <div class="tm-bg-black-transparent tm-testimonial-box text-center">  
+                                          
+                        <article id="tab1">
+                            <h1>Carga Masiva</h1>
+                            <p>
+                              <label for="avatar">Elija Archivo a Cargar</label>
+                            </p>
+                            <p>
+                              <input type="file"
+                               id="carga" name="carga"
+                               accept=".csv">
+                               <br>
+                               <button class="btn btn-outline-success btn-sm" onclick="cargar()">Cargar</button>
+                            </p>
+                        </article>
+                    </div>
+    
+                    <article id="tab2">
+                      <h1>Usuarios</h1>
+                      <div id='cardsc' class="row"></div>
+                  </article>
+                  <article id="tab3">
+                    <h1>Usuarios</h1>
+                    <div id='tablauser' class="row"></div>
+                </article>
+                    
+
+                    
+
+                    <button type="submit" class="btn btn-outline-info btn-sm"  onclick="crearpdf()">Generar PDF</button>
+                    <button class="btn btn-outline-success btn-sm" onclick="location.reload()">Actualizar</button>
+
+                    </div>        
+              </div>
+
+
+
+
+            </div>
+
+            <div class="services-content mt-30">
+              <h4 class="services-title">Modificar Usuarios</h4>
+              <br>
+              <input type="text" id="vUsuario" placeholder="Usuario a Modificar">
+              <input type="text" id="nNombre" placeholder="Nuevo Nombre">
+              <input type="text" id="nApellido" placeholder="Nuevo Apellido">
+              <select  name="menu" id="nSexo" class="input">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option> 
+              </select>
+              <input type="text" id="nUsuario" placeholder="Nuevo Usuario">
+              <input type="text" id="nPassword" placeholder="Nueva Contraseña">
+              <input type="text" id="nFoto" placeholder="Nueva Foto">
+              <br>
+              <button class="btn btn btn-success" onclick="modificarUsuario()">Modificar</button>
+                                     
+          </div>
+        </section>
+
+       
+
+        <!-- Creditos -->
+       <footer class="row">
+        <p class="col-12 text-white text-center tm-copyright-text">
+          Copyright &copy; 2021 Saul Barbero. 
+          Designed by <a href="#" class="tm-copyright-link">Saúl Barbero</a>
+        </p>
+      </footer>
+    </div>
+      <!-- .container-fluid -->
+    </div>
+
+    <script src="../pdf.js"></script>
+    <script src="../Administrador/acciones.js"></script>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="./script.js"></script>
+  </body>
+</html>
